@@ -1,6 +1,7 @@
+
 def validate_name(name):
-    return name != ""
+    return isinstance(name, str) and bool(name.strip())
 
 
 def validate_marks(marks):
-    return 0 <= marks <= 100
+    return isinstance(marks, (int, float)) and not isinstance(marks, bool) and 0 <= marks <= 100
